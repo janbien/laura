@@ -14,6 +14,6 @@ Návod na instalaci / příprava před školením:
 
 5) Přihlaste se do WP administrace a aktivujte šablonu "Laura 7".
 
-6) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor import.xml a odklikněte tlačítko *Upload file and import". U *Import author:* vyberte *or assign posts to an existing user*.
+6) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor *example-content.xml* a odklikněte tlačítko *Upload file and import". U *Import author:* vyberte *or assign posts to an existing user*.
 
 7) Nainstalujte si plugin [Jigsaw](https://wordpress.org/plugins/jigsaw/).
