@@ -10,10 +10,12 @@ Návod na instalaci / příprava před školením:
 
 3) Stáhněte si WordPress a nainstalujte si jej. Viz: [5 minutová instalace WordPressu](https://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install) 
 
-4) Adresáře laura1 - laura8 z tohoto repozitáře nahrajte do adresáře /wp-content/themes/.
+4) Adresáře *laura1*  - *laura8* z tohoto repozitáře nahrajte do adresáře /wp-content/themes/.
 
-5) Přihlaste se do WP administrace a aktivujte šablonu "Laura 7".
+5) Přihlaste se do WP administrace a aktivujte šablonu *Laura 7*.
 
 6) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor *example-content.xml* a odklikněte tlačítko *Upload file and import". U *Import author:* vyberte *or assign posts to an existing user*.
 
 7) Nainstalujte si plugin [Jigsaw](https://wordpress.org/plugins/jigsaw/).
+
+Toť vše.
