@@ -16,6 +16,10 @@ Návod na instalaci / příprava před školením:
 
 6) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor *example-content.xml* a odklikněte tlačítko *Upload file and import". U *Import author:* vyberte *or assign posts to an existing user*.
 
-7) Nainstalujte si plugin [Jigsaw](https://wordpress.org/plugins/jigsaw/).
+7) Nainstalujte plugin [Jigsaw](https://wordpress.org/plugins/jigsaw/) a aktivujte jej. 
+
+8) Nainstalujte pluginy [WP Inspect](https://cs.wordpress.org/plugins/wp-inspect/), [Debug Bar](https://wordpress.org/plugins/debug-bar/) a [Debug Bar Actions and Filters Addon](https://www.wordpress.org/plugins/debug-bar-actions-and-filters-addon/). Nechte je neaktivní.
+
+9) Nainstalujte plugin [Advanced Custom Fields 5 PRO](https://www.advancedcustomfields.com/). Pokud si nechcete kupovat licenci, vyřešíme tento krok až osobně na školení.
 
 Toť vše.
