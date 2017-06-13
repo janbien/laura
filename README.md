@@ -1,6 +1,6 @@
 # Laura - ukázková WordPress šablona na Bootstrapu
 
-Šablony **Laura** používám pro demonstrativní účely na [školení WordPressu pro vývojáře](https://www.janbien.cz/kurz-wordpress-vyvoj/).
+Šablony **Laura** používám pro demonstrativní účely a výklad základů WordPressu na [školení WordPressu pro vývojáře](https://www.janbien.cz/kurz-wordpress-vyvoj/).
 
 Návod na instalaci / příprava před školením:
 
