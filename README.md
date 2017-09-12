@@ -1,6 +1,6 @@
 # Laura - ukázková WordPress šablona na Bootstrapu
 
-Šablony **Laura** používám pro demonstrativní účely a výklad základů WordPressu na [školení WordPressu pro vývojáře](https://www.janbien.cz/kurz-wordpress-vyvoj/).
+Šablony **Laura** používám pro výklad základů WordPressu na [školení WordPressu pro vývojáře](https://www.janbien.cz/kurz-wordpress-vyvoj/). 
 
 Návod na instalaci / příprava před školením:
 
@@ -21,5 +21,7 @@ Návod na instalaci / příprava před školením:
 8) Nainstalujte pluginy [WP Inspect](https://wordpress.org/plugins/wp-inspect/), [Debug Bar](https://wordpress.org/plugins/debug-bar/) a [Debug Bar Actions and Filters Addon](https://wordpress.org/plugins/debug-bar-actions-and-filters-addon/). Nechte je neaktivní.
 
 9) Nainstalujte plugin [Advanced Custom Fields 5 PRO](https://www.advancedcustomfields.com/). Pokud si nechcete kupovat licenci, vyřešíme tento krok až osobně na školení.
+
+10) Nahlédnout na ukázkový web můžete na adrese [laura.janbien.cz](http://laura.janbien.cz).
 
 Toť vše.
