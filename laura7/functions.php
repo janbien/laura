@@ -1,4 +1,7 @@
 <?php  
+
+define('ACF_EARLY_ACCESS', '5');
+
 require_once (trailingslashit( get_template_directory() ) . 'libs/less/lessc.inc.php');
 require_once (trailingslashit( get_template_directory() ) . 'libs/wp-less.php');
 

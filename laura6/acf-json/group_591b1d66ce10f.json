@@ -37,25 +37,7 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_591b1e7246683",
-            "label": "Map",
-            "name": "map",
-            "type": "google_map",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "center_lat": "50.08804",
-            "center_lng": "50.08804",
-            "zoom": "",
-            "height": ""
-        },
+        }
         {
             "key": "field_592ffdbd3c667",
             "label": "Počet účastníků",
