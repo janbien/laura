@@ -20,7 +20,7 @@ Návod na instalaci / příprava před školením:
 
 8) Nainstalujte pluginy [WP Inspect](https://wordpress.org/plugins/wp-inspect/), [Debug Bar](https://wordpress.org/plugins/debug-bar/) a [Debug Bar Actions and Filters Addon](https://wordpress.org/plugins/debug-bar-actions-and-filters-addon/). Nechte je neaktivní.
 
-9) Nainstalujte plugin [Advanced Custom Fields 5 PRO](https://www.advancedcustomfields.com/). Pokud si nechcete kupovat licenci, vyřešíme tento krok až osobně na školení.
+9) Nainstalujte plugin [Advanced Custom Fields](https://cs.wordpress.org/plugins/advanced-custom-fields/). Ihned po instalaci (pokud máte aktivní šablonu Laura 7) vám sám WordPress nabídne aktualizaci ACF z verze 4 na 5. Aktualizaci proveďte, stejně tak potvrďte i následnou žádost o aktualizaci databáze. 
 
 10) Nahlédnout na ukázkový web můžete na adrese [laura.janbien.cz](http://laura.janbien.cz).
 
