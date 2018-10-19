@@ -1,12 +1,12 @@
 # Laura - ukázková WordPress šablona na Bootstrapu
 
-Šablony **Laura** používám pro výklad základů WordPressu na [školení WordPressu pro vývojáře](https://www.janbien.cz/kurz-wordpress-vyvoj/). 
+Šablony **Laura** používám pro výklad základů WordPressu na [školení WordPressu pro vývojáře](https://www.webmistr.wtf/skoleni/). 
 
 Návod na instalaci / příprava před školením:
 
-1) Jde o kurz pro vývojáře a kodéry. Předpokládá se tedy znalost frontendových technologií (HTML, CSS, JS) a základní znalost PHP. Na kurz je vhodné přijít s notebookem s nainstalovaný editorem kódu (ideálně se zvýrazňováním syntaxe HTML a PHP). Například [SublimeText](https://www.sublimetext.com).
+1) Jde o kurz pro vývojáře a kodéry. Předpokládá se tedy znalost frontendových technologií (HTML, CSS, JS) a základní znalost PHP. Na kurz je vhodné přijít s notebookem s nainstalovaný editorem kódu (ideálně se zvýrazňováním syntaxe HTML a PHP). Například [Visual Studio Code](https://code.visualstudio.com/), nebo [SublimeText](https://www.sublimetext.com).
 
-2) Na svůj notebook si nainstalujte lokální webserver, PHP a MySQL. Doporučené hotové komplet balíčky "vše v jednom": [MAMP](https://www.mamp.info), [XAMPP](https://www.apachefriends.org), [Local by Flywheel](http://local.getflywheel.com).
+2) Na svůj notebook si nainstalujte lokální webserver, PHP a MySQL. Doporučené hotové komplet balíčky "vše v jednom": [Local by Flywheel](http://local.getflywheel.com), [MAMP](https://www.mamp.info), [XAMPP](https://www.apachefriends.org).
 
 3) Stáhněte si WordPress a nainstalujte si jej. Viz: [5 minutová instalace WordPressu](https://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install) 
 
@@ -14,14 +14,18 @@ Návod na instalaci / příprava před školením:
 
 5) Přihlaste se do WP administrace a aktivujte šablonu *Laura 7*.
 
-6) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor *example-content.xml* a odklikněte tlačítko *Upload file and import*. U *Import author:* vyberte *or assign posts to an existing user*.
+6) Nainstalujte tyto pluginy (nechte je neaktivní):
+     * [Advanced Custom Fields](https://cs.wordpress.org/plugins/advanced-custom-fields/)
+     * [Custom Post Type UI](https://cs.wordpress.org/plugins/custom-post-type-ui/)
+     * [Jigsaw](https://wordpress.org/plugins/jigsaw/)
+     * [WP Inspect](https://wordpress.org/plugins/wp-inspect/)
+     * [Debug Bar](https://wordpress.org/plugins/debug-bar/)
+     * [Debug Bar Actions and Filters Addon](https://wordpress.org/plugins/debug-bar-actions-and-filters-addon/)
 
-7) Nainstalujte plugin [Jigsaw](https://wordpress.org/plugins/jigsaw/) a aktivujte jej. 
-
-8) Nainstalujte pluginy [WP Inspect](https://wordpress.org/plugins/wp-inspect/), [Debug Bar](https://wordpress.org/plugins/debug-bar/) a [Debug Bar Actions and Filters Addon](https://wordpress.org/plugins/debug-bar-actions-and-filters-addon/). Nechte je neaktivní.
-
-9) Nainstalujte plugin [Advanced Custom Fields](https://cs.wordpress.org/plugins/advanced-custom-fields/). Ihned po instalaci (pokud máte aktivní šablonu Laura 7) vám sám WordPress nabídne aktualizaci ACF z verze 4 na 5. Aktualizaci proveďte, stejně tak potvrďte i následnou žádost o aktualizaci databáze. 
-
-10) Nahlédnout na ukázkový web můžete na adrese [laura.janbien.cz](http://laura.janbien.cz).
+7) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor *example-content.xml* a odklikněte tlačítko *Upload file and import*. U *Import author:* vyberte *or assign posts to an existing user*.
 
 Toť vše.
+
+Nahlédnout na ukázkový web můžete na adrese [laura.janbien.cz](http://laura.janbien.cz).
+
+
