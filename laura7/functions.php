@@ -1,7 +1,5 @@
 <?php  
 
-define('ACF_EARLY_ACCESS', '5');
-
 require_once (trailingslashit( get_template_directory() ) . 'libs/less/lessc.inc.php');
 require_once (trailingslashit( get_template_directory() ) . 'libs/wp-less.php');
 
@@ -13,3 +11,5 @@ require_once (trailingslashit( get_template_directory() ) . 'functions/shortcode
 require_once (trailingslashit( get_template_directory() ) . 'functions/testimonials.php');
 require_once (trailingslashit( get_template_directory() ) . 'functions/events.php');
 require_once (trailingslashit( get_template_directory() ) . 'functions/customizer.php');
+
+
