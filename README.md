@@ -21,6 +21,7 @@ Návod na instalaci / příprava před školením:
      * [WP Inspect](https://cs.wordpress.org/plugins/wp-inspect/)
      * [Debug Bar](https://cs.wordpress.org/plugins/debug-bar/)
      * [Debug Bar Actions and Filters Addon](https://cs.wordpress.org/plugins/debug-bar-actions-and-filters-addon/)
+     * [WP Lorem ipsum](https://cs.wordpress.org/plugins/wp-lorem-ipsum/)
 
 7) V administračním menu vyberte *Tools > Import*. Na stránce *Import* vyberte poslední položku *WordPress* a klikněte *Install Now*. Jakmile se nainstaluje importovací plugin, klikněte *Run Importer*, vyberte soubor *example-content.xml* a odklikněte tlačítko *Upload file and import*. U *Import author:* vyberte *or assign posts to an existing user*.
 
