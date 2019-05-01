@@ -2,3 +2,4 @@
 /.htaccess
 /wp-content/uploads
 /wp-content/logs/*
+!/wp-content/logs/index.php
