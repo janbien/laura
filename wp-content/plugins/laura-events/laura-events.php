@@ -2,7 +2,7 @@
 /*
  * Plugin name: Laura Events
  * Plugin URI: https://github.com/janbien/laura/tree/master/wp-content/plugins/laura-events
- * Version: 1.1
+ * Version: 1.2
  * Author: Jan Bien
  * Author URI: https://www.webmistr.wtf
  * License: GPL2
@@ -16,6 +16,11 @@ add_action( 'init', function () {
 			'supports' => array( 'title', 'revisions', 'editor' )
 		)
 	);
+});
+
+add_filter('acf/settings/load_json', function($paths) {
+	$paths[] = __DIR__ . '/acf-json';
+	return $paths;
 });
 
 add_action('pre_get_posts', function ( $query ) {
