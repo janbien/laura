@@ -1,17 +1,21 @@
 <?php get_header(); ?>
 
 <div class="container">
-
-	<?php 
-		while ( have_posts() ): 
-			the_post();
-			get_template_part( 'post' );
-		endwhile; 
-	?>
-
-	<?php previous_posts_link();  ?>
-	<?php next_posts_link(); ?>
-	
+	<div class="row">
+		<div class="col-md-8">			
+			<?php 
+				while ( have_posts() ): 
+					the_post();
+					get_template_part( 'post' );
+				endwhile; 
+			?>
+			<?php previous_posts_link();  ?>
+			<?php next_posts_link(); ?>
+		</div>
+		<div class="col-md-4">
+			<?php dynamic_sidebar( 'sidebar' ); ?>
+		</div>
+	</div>
 </div>
 
 <?php get_footer(); ?>

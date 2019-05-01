@@ -12,7 +12,9 @@ Návod na instalaci / příprava před školením:
 
 4) Adresáře *laura1*  - *laura8* z tohoto repozitáře nahrajte do adresáře /wp-content/themes/.
 
-5) Přihlaste se do WP administrace a aktivujte šablonu *Laura 7*.
+5) Přihlaste se do WP administrace a aktivujte šablonu *Laura 4*.
+
+6) Aktivujte pluginy Laura Testimonials a Laura Events
 
 6) Nainstalujte tyto pluginy (nechte je neaktivní):
      * [Advanced Custom Fields](https://cs.wordpress.org/plugins/advanced-custom-fields/)

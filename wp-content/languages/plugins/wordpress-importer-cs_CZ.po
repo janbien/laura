@@ -1,0 +1,210 @@
+# Translation of Plugins - WordPress Importer - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - WordPress Importer - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-03-02 16:44:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - WordPress Importer - Stable (latest release)\n"
+
+#: wordpress-importer.php:953
+msgid "Invalid file type"
+msgstr "Neplatný formát souboru"
+
+#: wordpress-importer.php:284
+msgid "Submit"
+msgstr "Odeslat"
+
+#: wordpress-importer.php:642
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr "%s &#8222;%s&#8220; již existuje."
+
+#: wordpress-importer.php:322
+msgid "- Select -"
+msgstr "- Vyberte -"
+
+#: wordpress-importer.php:1136
+msgid "A new version of this importer is available. Please update to version %s to ensure compatibility with newer export files."
+msgstr "Je dostuponá nová verze importéru. Aktualizujte prosím na verzi %s pro zajištění kompatibility s novějšími soubory exportu."
+
+#: wordpress-importer.php:264
+msgid "Assign Authors"
+msgstr "Přiřadit autory"
+
+#: wordpress-importer.php:280
+msgid "Download and import file attachments"
+msgstr "Stáhnout a importovat přílohy"
+
+#: wordpress-importer.php:311
+msgid "as a new user:"
+msgstr "jako nový uživatel:"
+
+#: wordpress-importer.php:319
+msgid "assign posts to an existing user:"
+msgstr "přiřadit příspěvky pod existujícího uživatele:"
+
+#: wordpress-importer.php:1152
+msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
+msgstr "Vyberte WXR (.xml) soubor pro nahrání, poté kliknete na Nahrát soubor a importovat."
+
+#: parsers.php:43
+msgid "Details are shown above. The importer will now try again with a different parser..."
+msgstr "Podrobnosti jsou zobrazeny výše. Importer se o to nyní pokusí znovu s odlišnou metodou..."
+
+#: wordpress-importer.php:372
+msgid "Failed to create new user for %s. Their posts will be attributed to the current user."
+msgstr "Nepodařilo se vytvořit nového uživatele pro %s. Jejich příspěvky budou přiděleny aktuálnímu uživateli."
+
+#: wordpress-importer.php:516 wordpress-importer.php:738
+msgid "Failed to import %s %s"
+msgstr "Nepodařilo se importovat %s %s"
+
+#: wordpress-importer.php:704
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr "Nepodařilo se importovat %s &#8222;%s&#8220;"
+
+#: wordpress-importer.php:267
+msgid "If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary."
+msgstr "Pokud  bude nový uživatel vytvořený pomocí WordPressu, nové heslo bude náhodně vygenerováno a role uživatele bude nastavena na %s. Bude nutná manuální změna podrobností uživatele."
+
+#: wordpress-importer.php:297
+msgid "Import author:"
+msgstr "Importovat autora:"
+
+#: wordpress-importer.php:277
+msgid "Import Attachments"
+msgstr "Importovat přílohy"
+
+#. Author of the plugin/theme
+msgid "wordpressdotorg"
+msgstr "wordpressdotorg"
+
+#. Plugin Name of the plugin/theme
+msgid "WordPress Importer"
+msgstr "WordPress Importer"
+
+#: parsers.php:42 parsers.php:72 parsers.php:80
+msgid "There was an error when reading this WXR file"
+msgstr "Během čtení WXR souboru se vyskytla chyba"
+
+#: wordpress-importer.php:1029
+msgid "Remote file is too large, limit is %s"
+msgstr "Vzdálený soubor je příliš velký, limit je %s"
+
+#: wordpress-importer.php:1018
+msgid "Remote file is incorrect size"
+msgstr "Vzdálený soubor nemá správnou velikost"
+
+#: wordpress-importer.php:1003
+msgid "Remote server did not respond"
+msgstr "Vzdálený server neodpovídá"
+
+#: wordpress-importer.php:1011
+msgid "Remote server returned error response %1$d %2$s"
+msgstr "Vzdálený server vrátil chybu %1$d %2$s"
+
+#: wordpress-importer.php:132 wordpress-importer.php:141
+#: wordpress-importer.php:192 wordpress-importer.php:196
+#: wordpress-importer.php:205
+msgid "Sorry, there has been an error."
+msgstr "Vyskytla se neočekávaná chyba."
+
+#: wordpress-importer.php:424
+msgid "Failed to import category %s"
+msgstr "Import rubriky %s selhal"
+
+#: wordpress-importer.php:467
+msgid "Failed to import post tag %s"
+msgstr "Import štítku příspěvku %s selhal"
+
+#: wordpress-importer.php:940
+msgid "Fetching attachments is not enabled"
+msgstr "Stahování příloh není povoleno"
+
+#: wordpress-importer.php:176
+msgid "Have fun!"
+msgstr "Bavte se!"
+
+#: wordpress-importer.php:176
+msgid "All done."
+msgstr "Hotovo"
+
+#: wordpress-importer.php:605
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr "Import selhal &#8222;%s&#8220;: Neplatný typ příspěvku %s"
+
+#: wordpress-importer.php:238
+msgid "Failed to import author %s. Their posts will be attributed to the current user."
+msgstr "Selhal import autora %s. Jeho příspěvky budou převedeny k současnému uživateli."
+
+#: wordpress-importer.php:1226
+msgid "Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file."
+msgstr "Importovat <strong>příspěvky, stránky, komentáře, vybraná pole, rubriky a štítky</strong> z exportovaného souboru WordPressu."
+
+#. Description of the plugin/theme
+msgid "Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file."
+msgstr "Importujte příspěveky, stránky, komentáře, výběrové pole, rubriky, štítky a mnohem víc z exportovaného souboru WordPress."
+
+#: wordpress-importer.php:877
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr "Položka menu byla přeskočena z důvodu neplatného názvu v URL menu: %s"
+
+#: wordpress-importer.php:870
+msgid "Menu item skipped due to missing menu slug"
+msgstr "Položka menu byla přeskočena z důvodu chybějícího názvu v URL menu"
+
+#: wordpress-importer.php:1129
+msgid "Import WordPress"
+msgstr "Importovat WordPress"
+
+#: wordpress-importer.php:321
+msgid "or assign posts to an existing user:"
+msgstr "nebo přiřaďte příspěvky existujícímu uživateli:"
+
+#: wordpress-importer.php:308
+msgid "or create new user with login name:"
+msgstr "nebo vytvořte nového uživatele s uživatelským jménem:"
+
+#: wordpress-importer.php:177
+msgid "Remember to update the passwords and roles of imported users."
+msgstr "Nezapomeňte aktualizovat hesla a role importovaných uživatelů."
+
+#: wordpress-importer.php:197
+msgid "The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem."
+msgstr "Soubor exportu nemohl být nalezen v <code>%s</code>. Problém byl pravděpodobně způsoben chybným oprávněním."
+
+#: wordpress-importer.php:133
+msgid "The file does not exist, please try again."
+msgstr "Soubor neexistuje, zkuste to znovu."
+
+#: parsers.php:84 parsers.php:89 parsers.php:306 parsers.php:502
+msgid "This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr "Toto nevypadá jako soubor WXR, chybí/neplatná verze WXR"
+
+#: wordpress-importer.php:213
+msgid "This WXR file (version %s) may not be supported by this version of the importer. Please consider updating."
+msgstr "Tento WXR soubor (verze %s) není podporován touto verzí importéru. Zvažte prosím aktualizaci."
+
+#: wordpress-importer.php:265
+msgid "To make it easier for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site. For example, you may want to import all the entries as <code>admin</code>s entries."
+msgstr "Možná byste chtěli přiřadit autora importované položky existujícímu užívateli tohoto webu. Ulehčí vám to úpravy a ukládání importovaného obsahu. Například, byste možná chtěli importovat veškeré položky jako <code>administrátorské</code> položky."
+
+#: wordpress-importer.php:1023
+msgid "Zero size file downloaded"
+msgstr "Stažený soubor s nulovou velikostí"
+
+#: wordpress-importer.php:1151
+msgid "Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
+msgstr "Zdravíme! Nahrajte si WordPress eXtended RSS (WXR) soubor a my naimportujeme příspěvky, stránky, komentáře, vlastní pole, rubriky a štítky na tento web."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/wordpress-importer/"
+msgstr "https://wordpress.org/plugins/wordpress-importer/"
+
+#. Author URI of the plugin/theme
+msgid "https://wordpress.org/"
+msgstr "https://cs.wordpress.org/"

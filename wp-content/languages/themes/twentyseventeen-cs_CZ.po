@@ -1,0 +1,332 @@
+# Translation of Themes - Twenty Seventeen in Czech
+# This file is distributed under the same license as the Themes - Twenty Seventeen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-11-01 13:59:37+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Themes - Twenty Seventeen\n"
+
+#. Description of the theme
+msgid "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device."
+msgstr "Twenty Seventeen přináší na stránky život, v záhlaví videa a dokonalé fotky. Se zaměřením na obchodních místech, to představuje více oddílů na přední straně, stejně jako widgety, navigace a sociální menu, loga a další. Přizpůsobte svůj asymetrické mřížky s barevným schématem vlastní a prezentovat svůj multimediální obsah s post formátů. Naše výchozí téma pro rok 2017 funguje skvěle v mnoha jazycích, pro všechny schopnosti, a na jakémkoli zařízení."
+
+#. Theme Name of the theme
+msgid "Twenty Seventeen"
+msgstr "Twenty Seventeen"
+
+#: template-parts/footer/footer-widgets.php:18
+msgid "Footer"
+msgstr "Zápatí"
+
+#: functions.php:338
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr "Přidejte zde widgety, které se budou zobrazovat v postranním panelu příspěvků a stránek s archivy."
+
+#: sidebar.php:18 functions.php:336
+msgid "Blog Sidebar"
+msgstr "Postranní panel blogu"
+
+#: template-parts/navigation/navigation-top.php:31
+#: template-parts/header/site-branding.php:34
+msgid "Scroll down to content"
+msgstr "Posun dolů na obsah"
+
+#: functions.php:179
+msgctxt "Theme starter content"
+msgid "Coffee"
+msgstr "Káva"
+
+#: functions.php:175
+msgctxt "Theme starter content"
+msgid "Sandwich"
+msgstr "Sendvič"
+
+#: functions.php:171
+msgctxt "Theme starter content"
+msgid "Espresso"
+msgstr "Espresso"
+
+#: inc/custom-header.php:128
+msgid "Pause background video"
+msgstr "Pauza videa na pozadí"
+
+#: inc/custom-header.php:127
+msgid "Play background video"
+msgstr "Spuštění videa na pozadí"
+
+#: inc/template-tags.php:151
+msgid "Front Page Section %1$s Placeholder"
+msgstr "Zástupný obrázek sekce %1$s hlavní stránky"
+
+#: inc/customizer.php:109
+msgid "When the two-column layout is assigned, the page title is in one column and content is in the other."
+msgstr "Pokud je přiřazeno rozložení na dva sloupce, titulní strana je v jednom sloupci, a obsah je v druhé."
+
+#: single.php:34
+msgid "Next Post"
+msgstr "Následující příspěvek"
+
+#: index.php:27
+msgid "Posts"
+msgstr "Příspěvky"
+
+#: inc/template-tags.php:89
+msgid "Tags"
+msgstr "Štítky"
+
+#: inc/template-tags.php:85
+msgid "Categories"
+msgstr "Rubriky"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:66
+msgid ", "
+msgstr ", "
+
+#. translators: %s: post date
+#: inc/template-tags.php:52
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr "<span class=\"screen-reader-text\">Publikováno</span> %s"
+
+#. translators: %s: post author
+#: inc/template-tags.php:21
+msgid "by %s"
+msgstr "Od %s"
+
+#: inc/icon-functions.php:44
+msgid "Please define an SVG icon filename."
+msgstr "Definujte název souboru SVG."
+
+#: inc/icon-functions.php:39
+msgid "Please define default parameters in the form of an array."
+msgstr "Definujte výchozí parametry ve formě pole."
+
+#: inc/customizer.php:143
+msgid "Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed."
+msgstr "V rozbalovacím seznamu vyberte stránky, které chcete zobrazit. Obrázek sekce předáte v nastavení hlavního obrázku stránky. Prázdné sekce se vůbec nezobrazí."
+
+#. translators: %d is the front page section number
+#: inc/customizer.php:142
+msgid "Front Page Section %d Content"
+msgstr "Obsah sekce %d hlavní stránky"
+
+#: inc/customizer.php:112 inc/customizer.php:171
+msgid "Two Column"
+msgstr "Dva sloupce"
+
+#: inc/customizer.php:111 inc/customizer.php:170
+msgid "One Column"
+msgstr "Jeden sloupec"
+
+#: inc/customizer.php:106
+msgid "Page Layout"
+msgstr "Rozložení stránky"
+
+#: inc/customizer.php:89
+msgid "Theme Options"
+msgstr "Nastavení šablony"
+
+#: inc/customizer.php:64
+msgid "Custom"
+msgstr "Vlastní"
+
+#: inc/customizer.php:62
+msgid "Light"
+msgstr "Světlé"
+
+#: inc/customizer.php:60
+msgid "Color Scheme"
+msgstr "Barevné schéma"
+
+#: inc/custom-header.php:56
+msgid "Default Header Image"
+msgstr "Výchozí obrázek hlavičky"
+
+#: functions.php:360
+msgid "Footer 2"
+msgstr "Zápatí 2"
+
+#: functions.php:350 functions.php:362
+msgid "Add widgets here to appear in your footer."
+msgstr "Widgety přidané tady se objeví v zápatí."
+
+#: functions.php:348
+msgid "Footer 1"
+msgstr "Zápatí 1"
+
+#: functions.php:289
+msgctxt "Libre Franklin font: on or off"
+msgid "on"
+msgstr "on"
+
+#: template-parts/navigation/navigation-top.php:12 functions.php:64
+#: functions.php:203
+msgid "Top Menu"
+msgstr "Hlavní menu"
+
+#: comments.php:62
+msgid "Reply"
+msgstr "Odpovědět"
+
+#: template-parts/post/content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Požadovaný obsah se na webu bohužel nenachází. Můžete ale zkusit vyhledávání konkrétního klíčového slova."
+
+#: search.php:54
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Omlouváme se, ale zadaný výraz nebyl na webu nalezen. Zkuste prosím hledat znovu nějaké jiné klíčové slovo."
+
+#: template-parts/post/content-none.php:24
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Chystáte se publikovat první příspěvek? <a href=\"%1$s\">Můžete začít rovnou zde</a>."
+
+#: template-parts/post/content-none.php:17 search.php:21
+msgid "Nothing Found"
+msgstr "Nic nenalezeno"
+
+#: single.php:33
+msgid "Previous Post"
+msgstr "Předchozí příspěvek"
+
+#: single.php:33 comments.php:71
+msgid "Previous"
+msgstr "Předchozí"
+
+#: single.php:34 comments.php:72
+msgid "Next"
+msgstr "Následující"
+
+#: searchform.php:20
+msgctxt "submit button"
+msgid "Search"
+msgstr "Hledání"
+
+#: searchform.php:19
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Hledat &hellip;"
+
+#: searchform.php:17
+msgctxt "label"
+msgid "Search for:"
+msgstr "Hledat:"
+
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr "Výsledky vyhledávání: %s"
+
+#. translators: %s: Name of current post
+#: template-parts/page/content-front-page-panels.php:45
+#: template-parts/page/content-front-page.php:42
+#: template-parts/post/content-audio.php:84 template-parts/post/content.php:57
+#: template-parts/post/content-gallery.php:71
+#: template-parts/post/content-video.php:83
+#: template-parts/post/content-image.php:61 functions.php:390
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Pokračovat ve čtení<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: inc/customizer.php:63
+msgid "Dark"
+msgstr "Tmavé"
+
+#: inc/back-compat.php:39 inc/back-compat.php:52 inc/back-compat.php:70
+msgid "Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again."
+msgstr "Twenty Seventeen vyžaduje minimálně WordPress verze 4.7. Aktuálně používáte verzi %s. Nejprve proveďte aktualizaci, a poté to prosím zkuste znovu."
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:117
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Upravit<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/page/content-page.php:26
+#: template-parts/post/content-audio.php:91 template-parts/post/content.php:64
+#: template-parts/post/content-gallery.php:78
+#: template-parts/post/content-video.php:90
+#: template-parts/post/content-image.php:68
+msgid "Pages:"
+msgstr "Stránky:"
+
+#: template-parts/navigation/navigation-top.php:17
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:27
+msgid "Skip to content"
+msgstr "Přejít k obsahu webu"
+
+#: functions.php:482
+msgid "Collapse child menu"
+msgstr "Skrýt podřazené položky"
+
+#: functions.php:481
+msgid "Expand child menu"
+msgstr "\tZobrazit podřazené položky"
+
+#: functions.php:65 functions.php:214
+msgid "Social Links Menu"
+msgstr "Menu pro sociální sítě"
+
+#: template-parts/footer/site-info.php:19
+msgid "Proudly powered by %s"
+msgstr "Používáme %s (v češtině)."
+
+#: footer.php:26
+msgid "Footer Social Links Menu"
+msgstr "Menu sociálních odkazů v patičce"
+
+#: comments.php:82
+msgid "Comments are closed."
+msgstr "Komentáře jsou uzavřeny."
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s odpověď na &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s odpovědi na &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s odpovědí na &ldquo;%2$s&rdquo;"
+
+#. translators: %s: post title
+#: comments.php:37
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "Jedna odpověď na &ldquo;%s&rdquo;"
+
+#: archive.php:50 search.php:47 index.php:54
+msgid "Page"
+msgstr "Stránka:"
+
+#: 404.php:21
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Omlouváme se, ale stránka nebyla nalezena."
+
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Patrně jste chtěli zobrazit stránku, která se na webu bohužel nenachází. Můžete ale zkusit vyhledávání konkrétního klíčového slova."
+
+#: archive.php:48 search.php:45 index.php:52
+msgid "Previous page"
+msgstr "Předchozí stránka"
+
+#: archive.php:49 search.php:46 index.php:53
+msgid "Next page"
+msgstr "Další stránka"
+
+#. Author of the theme
+msgid "the WordPress team"
+msgstr "Vývojáři WordPressu (a překladatelé)"
+
+#. Theme URI of the theme
+msgid "https://wordpress.org/themes/twentyseventeen/"
+msgstr "https://cs.wordpress.org/themes/twentyseventeen/"
+
+#. Author URI of the theme
+#: template-parts/footer/site-info.php:18
+msgid "https://wordpress.org/"
+msgstr "https://cs.wordpress.org/"
