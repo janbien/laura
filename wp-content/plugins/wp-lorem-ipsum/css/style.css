@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+form.li-form table {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+form.li-form table tr td:first-child {
+    width: 150px;
+}
+
+form.li-form table tr td {
+    padding: 2px 0;
+}
