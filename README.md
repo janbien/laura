@@ -14,7 +14,7 @@ Návod na instalaci / příprava před školením:
 
 5) Importujte vzorový obsah ze souboru */_example/example-content.xml*: [krok 1](https://href.wtf/190501xwz0w.png), [krok 2](https://href.wtf/190501ldg37.png), [krok 3](https://href.wtf/190501s5d8x.png).
 
-6) Umístěte *Top menu* do oblasti "Top menu" – [náhled](https://href.wtf/190509849sa.png).
+6) Umístěte *Top menu* do oblasti *Top menu* – [náhled](https://href.wtf/190509849sa.png).
 
 Tento ukázkový web můžete v živém nahlédnout na adrese [laura.janbien.cz](http://laura.janbien.cz).
 
