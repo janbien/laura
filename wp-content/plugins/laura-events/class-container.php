@@ -62,7 +62,7 @@ class Container {
                 array(
                     'key'		=> 'date',
                     'compare'	=> '>=',
-                    'value'		=> date('Ymd')
+                    'value'		=> date( 'Ymd' )
                 )
             ),
             'orderby' => 'meta_value',
