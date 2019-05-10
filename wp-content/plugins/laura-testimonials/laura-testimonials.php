@@ -3,7 +3,7 @@
 /*
  * Plugin name: Laura Testimonials
  * Plugin URI: https://github.com/janbien/laura/tree/master/wp-content/plugins/laura-testimonials
- * Version: 1.2
+ * Version: 1.2.1
  * Author: Jan Bien
  * Author URI: https://www.webmistr.wtf
  * License: GPL2
