@@ -3,7 +3,7 @@
 /*
  * Plugin name: Laura Testimonials
  * Plugin URI: https://github.com/janbien/laura/tree/master/wp-content/plugins/laura-testimonials
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Jan Bien
  * Author URI: https://www.webmistr.wtf
  * License: GPL2
@@ -50,7 +50,7 @@ add_filter('acf/settings/load_json', function($paths) {
 
 add_shortcode( 'testimonials', function() {
 	ob_start();
-	include( __DIR__ . '/shortcode-template.php' );
+	include( __DIR__ . '/views/shortcode.php' );
 	return ob_get_clean();
 });
 
