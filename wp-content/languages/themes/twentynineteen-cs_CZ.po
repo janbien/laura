@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Nineteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-01-21 21:14:46+0000\n"
+"PO-Revision-Date: 2019-05-20 10:31:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,19 +65,19 @@ msgctxt "primary color"
 msgid "Default"
 msgstr "Výchozí"
 
-#: functions.php:170
+#: functions.php:166
 msgid "White"
 msgstr "Bílá"
 
-#: functions.php:165
+#: functions.php:161
 msgid "Light Gray"
 msgstr "Světle šedá"
 
-#: functions.php:160
+#: functions.php:156
 msgid "Dark Gray"
 msgstr "Tmavě šedá"
 
-#: functions.php:155
+#: functions.php:151
 msgid "Secondary"
 msgstr "Sekundární"
 
@@ -126,11 +126,11 @@ msgstr "Původní velikost"
 msgid "Page"
 msgstr "Stránka"
 
-#: functions.php:194
+#: functions.php:190
 msgid "Add widgets here to appear in your footer."
 msgstr "Zde přidejte widgety, které se zobrazí v zápatí."
 
-#: template-parts/footer/footer-widgets.php:12 functions.php:192
+#: functions.php:188 template-parts/footer/footer-widgets.php:12
 msgid "Footer"
 msgstr "Zápatí"
 
@@ -169,9 +169,9 @@ msgstr "Hlavní menu"
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Pokračovat ve čtení<span class=\"screen-reader-text\"> \"%s\"</span>"
 
+#: image.php:52 template-parts/content/content-page.php:27
 #: template-parts/content/content.php:49
-#: template-parts/content/content-page.php:27
-#: template-parts/content/content-single.php:40 image.php:52
+#: template-parts/content/content-single.php:40
 msgid "Pages:"
 msgstr "Stránky:"
 
@@ -296,15 +296,15 @@ msgstr "Archiv rubriky:"
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "Upravit <span class=\"screen-reader-text\">%s</span>"
 
-#: header.php:24
+#: header.php:25
 msgid "Skip to content"
 msgstr "Přejít k obsahu webu"
 
-#: template-parts/header/site-branding.php:46 functions.php:61
+#: functions.php:61 template-parts/header/site-branding.php:46
 msgid "Social Links Menu"
 msgstr "Menu pro sociální sítě"
 
-#: functions.php:59 functions.php:150
+#: functions.php:59 functions.php:146
 msgid "Primary"
 msgstr "Primární"
 
@@ -352,20 +352,20 @@ msgstr "Napsat komentář"
 msgid "Join the Conversation"
 msgstr "Připojte se k diskuzi"
 
-#: classes/class-twentynineteen-walker-comment.php:100
+#: classes/class-twentynineteen-walker-comment.php:99
 msgid "Your comment is awaiting moderation."
 msgstr "Komentář čeká na schválení."
 
-#: classes/class-twentynineteen-walker-comment.php:95
+#: classes/class-twentynineteen-walker-comment.php:94
 msgid "Edit"
 msgstr "Upravit"
 
 #. translators: 1: comment date, 2: comment time
-#: classes/class-twentynineteen-walker-comment.php:87
+#: classes/class-twentynineteen-walker-comment.php:86
 msgid "%1$s at %2$s"
 msgstr "%1$s (%2$s)"
 
-#: classes/class-twentynineteen-walker-comment.php:67
+#: classes/class-twentynineteen-walker-comment.php:66
 msgid "%s <span class=\"screen-reader-text says\">says:</span>"
 msgstr "%s <span class=\"screen-reader-text says\">napsal:</span>"
 
@@ -377,13 +377,13 @@ msgstr "Patrně jste chtěli zobrazit stránku, která se na webu bohužel nenac
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Omlouváme se, ale stránka nebyla nalezena."
 
+#. Theme URI of the theme
+msgid "https://wordpress.org/themes/twentynineteen/"
+msgstr "https://cs.wordpress.org/themes/twentynineteen/"
+
 #. Author of the theme
 msgid "the WordPress team"
 msgstr "Vývojáři WordPressu (a překladatelé)"
-
-#. Theme URI of the theme
-msgid "https://github.com/WordPress/twentynineteen"
-msgstr "https://github.com/WordPress/twentynineteen"
 
 #. Author URI of the theme
 #: footer.php:25

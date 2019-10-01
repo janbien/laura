@@ -163,15 +163,15 @@ function wp_print_media_templates() {
 	}
 
 	$alt_text_description = sprintf(
-		/* translators: 1: link start tag, 2: accessibility text, 3: link end tag */
-		__( '%1$sDescribe the purpose of the image%2$s%3$s. Leave empty if the image is purely decorative.' ),
-		'<a href="' . esc_url( 'https://www.w3.org/WAI/tutorials/images/decision-tree' ) . '" target="_blank" rel="noopener noreferrer">',
+		/* translators: 1: link to tutorial, 2: additional link attributes, 3: accessibility text */
+		__( '<a href="%1$s" %2$s>Describe the purpose of the image%3$s</a>. Leave empty if the image is purely decorative.' ),
+		esc_url( 'https://www.w3.org/WAI/tutorials/images/decision-tree' ),
+		'target="_blank" rel="noopener noreferrer"',
 		sprintf(
 			'<span class="screen-reader-text"> %s</span>',
 			/* translators: accessibility text */
 			__( '(opens in a new tab)' )
-		),
-		'</a>'
+		)
 	);
 	?>
 	<!--[if lte IE 8]>
@@ -185,8 +185,8 @@ function wp_print_media_templates() {
 	</style>
 	<![endif]-->
 	<script type="text/html" id="tmpl-media-frame">
+		<div class="media-frame-title" id="media-frame-title"></div>
 		<div class="media-frame-menu"></div>
-		<div class="media-frame-title"></div>
 		<div class="media-frame-router"></div>
 		<div class="media-frame-content"></div>
 		<div class="media-frame-toolbar"></div>
@@ -194,9 +194,11 @@ function wp_print_media_templates() {
 	</script>
 
 	<script type="text/html" id="tmpl-media-modal">
-		<div tabindex="0" class="<?php echo $class; ?>">
-			<button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text"><?php _e( 'Close media panel' ); ?></span></span></button>
-			<div class="media-modal-content"></div>
+		<div tabindex="0" class="<?php echo $class; ?>" role="dialog" aria-modal="true" aria-labelledby="media-frame-title">
+			<# if ( data.hasCloseButton ) { #>
+				<button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text"><?php _e( 'Close dialog' ); ?></span></span></button>
+			<# } #>
+			<div class="media-modal-content" role="document"></div>
 		</div>
 		<div class="media-modal-backdrop"></div>
 	</script>
@@ -319,6 +321,7 @@ function wp_print_media_templates() {
 		<div class="edit-media-header">
 			<button class="left dashicons <# if ( ! data.hasPrevious ) { #> disabled <# } #>"><span class="screen-reader-text"><?php _e( 'Edit previous media item' ); ?></span></button>
 			<button class="right dashicons <# if ( ! data.hasNext ) { #> disabled <# } #>"><span class="screen-reader-text"><?php _e( 'Edit next media item' ); ?></span></button>
+			<button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text"><?php _e( 'Close dialog' ); ?></span></span></button>
 		</div>
 		<div class="media-frame-title"></div>
 		<div class="media-frame-content"></div>
@@ -1291,9 +1294,9 @@ function wp_print_media_templates() {
 					<dl class="gallery-item">
 						<dt class="gallery-icon">
 							<# if ( attachment.thumbnail ) { #>
-								<img src="{{ attachment.thumbnail.url }}" width="{{ attachment.thumbnail.width }}" height="{{ attachment.thumbnail.height }}" alt="" />
+								<img src="{{ attachment.thumbnail.url }}" width="{{ attachment.thumbnail.width }}" height="{{ attachment.thumbnail.height }}" alt="{{ attachment.alt }}" />
 							<# } else { #>
-								<img src="{{ attachment.url }}" alt="" />
+								<img src="{{ attachment.url }}" alt="{{ attachment.alt }}" />
 							<# } #>
 						</dt>
 						<# if ( attachment.caption ) { #>
