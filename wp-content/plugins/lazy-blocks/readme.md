@@ -2,9 +2,9 @@
 * Contributors: nko
 * Tags: gutenberg, blocks, custom, meta, fields
 * Requires at least: 4.9.0
-* Tested up to: 5.1
+* Tested up to: 5.2
 * Requires PHP: 5.4
-* Stable tag: 1.4.3
+* Stable tag: 1.7.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,7 @@ Gutenberg blocks visual constructor. Custom meta fields or blocks with output wi
     * Password
     * Image
     * Gallery
+    * File
     * Rich Text (WYSIWYG)
     * Code Editor
     * Inner Blocks
@@ -68,6 +69,65 @@ The manual installation method involves downloading our LazyBlocks plugin and up
 3. Block in Gutenberg editor
 
 ## Changelog ##
+
+= 1.7.0 =
+
+* added experimental Required option for top-level controls
+* added possibility to choose which blocks and template export on Tools page
+* changed Templates page to use React
+* changed Tools page to use React
+* fixed PHP error when className is not available in the block
+* fixed PHP warning when used multiple select options
+* minor changes
+
+= 1.6.2 =
+
+* added File control
+* changed anchor attribute settings (fixed anchor save in the latest Gutenberg)
+* fixed select control value save (if no Multiple option set)
+* fixed InnerBlocks with option "Hide if block is not selected"
+* fixed boolean meta data of constructor save (convert to string)
+
+= 1.6.1 =
+
+* fixed order of controls was not saved
+* fixed php error when no lazy blocks available
+* fixed selecting inner repeater controls
+* fixed control styles disappear while resorting
+* prevent control selection on drag handler click
+* prevent control selection on repeater toggle click
+
+= 1.6.0 =
+
+* Improved Constructor UI
+  * Block setting moved to the right side (Inspector)
+  * Control setting opens in Inspector when you select it
+* added alpha channel option to Color Picker control
+* added 'Save in Meta' support for Repeater field
+* added possibility to hide block previews in editor
+* added possibility to use single code output for both Frontend and Editor
+* added Select Multiple option
+* fixed block preview loading when returned empty string
+* fixed Keywords, Align and Condition block settings save when empty
+
+= 1.5.1 =
+
+* added block slug validation in constructor
+* added slug creation if don't exist after block title added
+* fixed controls saving in new blocks
+* fixed icon picker button styles in constructor
+
+= 1.5.0 =
+
+* changed Block Constructor page to Gutenberg
+* added option to hide controls if block is not selected
+* added Radio control
+* fixed duplicating of categories selector in blocks constructor
+* fixed block ID duplication
+* fixed block preview loading error
+* fixed block names some characters
+* fixed custom post types publishing
+* fixed error if custom post type removed, but the template for this post is still available
 
 = 1.4.3 =
 

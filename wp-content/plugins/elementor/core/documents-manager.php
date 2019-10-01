@@ -3,6 +3,7 @@ namespace Elementor\Core;
 
 use Elementor\Core\Base\Document;
 use Elementor\Core\Common\Modules\Ajax\Module as Ajax;
+use Elementor\Core\DocumentTypes\Page;
 use Elementor\Core\DocumentTypes\Post;
 use Elementor\DB;
 use Elementor\Plugin;
@@ -117,7 +118,9 @@ class Documents_Manager {
 	 */
 	public function register_default_types() {
 		$default_types = [
-			'post' => Post::get_class_full_name(),
+			'post' => Post::get_class_full_name(), // BC.
+			'wp-post' => Post::get_class_full_name(),
+			'wp-page' => Page::get_class_full_name(),
 		];
 
 		foreach ( $default_types as $type => $class ) {
@@ -344,7 +347,7 @@ class Documents_Manager {
 		$class = $this->get_document_type( $type, false );
 
 		if ( ! $class ) {
-			wp_die( sprintf( 'Type %s does not exist.', $type ) );
+			return new \WP_Error( 500, sprintf( 'Type %s does not exist.', $type ) );
 		}
 
 		if ( empty( $post_data['post_title'] ) ) {
@@ -404,6 +407,11 @@ class Documents_Manager {
 		global $pagenow;
 
 		if ( ! in_array( $pagenow, [ 'post.php', 'edit.php' ], true ) ) {
+			return $allcaps;
+		}
+
+		// Don't touch not existing or not allowed caps.
+		if ( empty( $caps[0] ) || empty( $allcaps[ $caps[0] ] ) ) {
 			return $allcaps;
 		}
 
@@ -626,6 +634,8 @@ class Documents_Manager {
 	 * @return array
 	 */
 	public function get_groups() {
+		// _deprecated_function( __METHOD__, '2.4.0' );
+
 		return [];
 	}
 

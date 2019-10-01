@@ -1,6 +1,8 @@
 <?php
 namespace Elementor\Core\Upgrade;
 
+use Elementor\Icons_Manager;
+use Elementor\Modules\Usage\Module;
 use Elementor\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,7 +42,12 @@ class Upgrades {
 		}
 
 		foreach ( $post_ids as $post_id ) {
-			$data = Plugin::$instance->db->get_plain_editor( $post_id );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}
@@ -57,7 +64,11 @@ class Upgrades {
 				return $element;
 			} );
 
-			Plugin::$instance->db->save_editor( $post_id, $data );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			$document->save( [
+				'elements' => $data,
+			] );
 		}
 	}
 
@@ -88,7 +99,12 @@ class Upgrades {
 		}
 
 		foreach ( $post_ids as $post_id ) {
-			$data = Plugin::$instance->db->get_plain_editor( $post_id );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}
@@ -113,7 +129,11 @@ class Upgrades {
 				return $element;
 			} );
 
-			Plugin::$instance->db->save_editor( $post_id, $data );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			$document->save( [
+				'elements' => $data,
+			] );
 		}
 	}
 
@@ -141,7 +161,12 @@ class Upgrades {
 		}
 
 		foreach ( $post_ids as $post_id ) {
-			$data = Plugin::$instance->db->get_plain_editor( $post_id );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}
@@ -172,7 +197,11 @@ class Upgrades {
 				return $element;
 			} );
 
-			Plugin::$instance->db->save_editor( $post_id, $data );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			$document->save( [
+				'elements' => $data,
+			] );
 		}
 	}
 
@@ -296,12 +325,17 @@ class Upgrades {
 
 		foreach ( $post_ids as $post_id ) {
 			$do_update = false;
-			$data = Plugin::$instance->db->get_plain_editor( $post_id );
+			$document = Plugin::$instance->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}
 
-			$data = Plugin::$instance->db->iterate_data( $data, function ( $element ) use ( & $do_update ) {
+			$data = Plugin::$instance->db->iterate_data( $data, function( $element ) use ( & $do_update ) {
 				if ( empty( $element['widgetType'] ) || 'video' !== $element['widgetType'] ) {
 					return $element;
 				}
@@ -400,7 +434,7 @@ class Upgrades {
 				continue;
 			}
 
-			$data = Plugin::$instance->db->iterate_data( $data, function ( $element ) use ( & $do_update, $widgets ) {
+			$data = Plugin::$instance->db->iterate_data( $data, function( $element ) use ( & $do_update, $widgets ) {
 				if ( empty( $element['widgetType'] ) || ! in_array( $element['widgetType'], $widgets ) ) {
 					return $element;
 				}
@@ -464,5 +498,136 @@ class Upgrades {
 		} // End foreach().
 
 		return $updater->should_run_again( $post_ids );
+	}
+
+	/**
+	 * Set FontAwesome Migration needed flag
+	 */
+	public static function _v_2_6_0_fa4_migration_flag() {
+		add_option( 'elementor_icon_manager_needs_update', 'yes' );
+		add_option( 'elementor_load_fa4_shim', 'yes' );
+	}
+
+	/**
+	 * migrate Icon control string value to Icons control array value
+	 *
+	 * @param array $element
+	 * @param array $args
+	 *
+	 * @return mixed
+	 */
+	public static function _migrate_icon_fa4_value( $element, $args ) {
+		$widget_id = $args['widget_id'];
+
+		if ( empty( $element['widgetType'] ) || $widget_id !== $element['widgetType'] ) {
+			return $element;
+		}
+		foreach ( $args['control_ids'] as $old_name => $new_name ) {
+			// exit if new value exists
+			if ( isset( $element['settings'][ $new_name ] ) ) {
+				continue;
+			}
+
+			// exit if no value to migrate
+			if ( ! isset( $element['settings'][ $old_name ] ) ) {
+				continue;
+			}
+
+			$element['settings'][ $new_name ] = Icons_Manager::fa4_to_fa5_value_migration( $element['settings'][ $old_name ] );
+			$args['do_update'] = true;
+		}
+		return $element;
+	}
+
+	/**
+	 * Set FontAwesome 5 value Migration on for button widget
+	 *
+	 * @param Updater $updater
+	 */
+	public static function _v_2_6_6_fa4_migration_button( $updater ) {
+		$changes = [
+			[
+				'callback' => [ 'Elementor\Core\Upgrade\Upgrades', '_migrate_icon_fa4_value' ],
+				'control_ids' => [
+					'icon' => 'selected_icon',
+				],
+			],
+		];
+		Upgrade_Utils::_update_widget_settings( 'button', $updater, $changes );
+		Upgrade_Utils::_update_widget_settings( 'icon-box', $updater, $changes );
+	}
+
+	/**
+	 *  Update database to separate page from post.
+	 *
+	 * @param Updater $updater
+	 *
+	 * @param string $type
+	 *
+	 * @return bool
+	 */
+	public static function rename_document_base_to_wp( $updater, $type ) {
+		global $wpdb;
+
+		$post_ids = $updater->query_col( $wpdb->prepare(
+			"SELECT p1.ID FROM {$wpdb->posts} AS p 
+					LEFT JOIN {$wpdb->posts} AS p1 ON (p.ID = p1.post_parent || p.ID = p1.ID) 
+					WHERE p.post_type = %s;", $type ) );
+
+		if ( empty( $post_ids ) ) {
+			return false;
+		}
+
+		$sql_post_ids = implode( ',', $post_ids );
+
+		$wpdb->query( $wpdb->prepare(
+			"UPDATE $wpdb->postmeta SET meta_value = %s
+			WHERE meta_key = '_elementor_template_type' && post_id in ( %s );
+		 ", 'wp-' . $type, $sql_post_ids ) );
+
+		return $updater->should_run_again( $post_ids );
+	}
+
+	/**
+	 *  Update database to separate page from post.
+	 *
+	 * @param Updater $updater
+	 *
+	 * @return bool
+	 */
+	// Because the query is slow on large sites, temporary don't upgrade.
+	/*	public static function _v_2_7_0_rename_document_types_to_wp( $updater ) {
+		return self::rename_document_base_to_wp( $updater, 'post' ) || self::rename_document_base_to_wp( $updater, 'page' );
+	}*/
+
+	// Upgrade code was fixed & moved to _v_2_7_1_remove_old_usage_data.
+	/* public static function _v_2_7_0_remove_old_usage_data() {} */
+
+	// Upgrade code moved to _v_2_7_1_recalc_usage_data.
+	/* public static function _v_2_7_0_recalc_usage_data( $updater ) {} */
+
+	/**
+	 * Don't use the old data anymore.
+	 * Since 2.7.1 the key was changed from `elementor_elements_usage` to `elementor_controls_usage`.
+	 */
+	public static function _v_2_7_1_remove_old_usage_data() {
+		delete_option( 'elementor_elements_usage' );
+		delete_post_meta_by_key( '_elementor_elements_usage' );
+	}
+
+	/**
+	 * Recalc usage.
+	 *
+	 * @param Updater $updater
+	 *
+	 * @return bool
+	 */
+	public static function _v_2_7_1_recalc_usage_data( $updater ) {
+		/** @var Module $module */
+		$module = Plugin::$instance->modules_manager->get_modules( 'usage' );
+
+		$post_count = $module->recalc_usage( $updater->get_limit(), $updater->get_current_offset() );
+
+		return ( $post_count === $updater->get_limit() );
 	}
 }

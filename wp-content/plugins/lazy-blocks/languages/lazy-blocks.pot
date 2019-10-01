@@ -15,197 +15,60 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: dist/lazy-blocks/classes/class-blocks.php:245, dist/lazy-blocks/classes/class-blocks.php:1109
+#: dist/lazy-blocks/classes/class-blocks.php:251, dist/lazy-blocks/classes/class-blocks.php:791
 msgid "Lazy Blocks"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-blocks.php:246
+#: dist/lazy-blocks/classes/class-blocks.php:252
 msgid "Lazy Block"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-blocks.php:316, dist/lazy-blocks/classes/class-blocks.php:514
+#: dist/lazy-blocks/classes/class-blocks.php:344
 msgid "Icon"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-blocks.php:321, dist/lazy-blocks/classes/class-blocks.php:522
+#: dist/lazy-blocks/classes/class-blocks.php:349
 msgid "Category"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-blocks.php:372
-msgid "Controls"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:380
-msgid "Code"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:388
-msgid "Settings"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:396
-msgid "Condition"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:506
-msgid "Slug"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:517
-msgid "Choose"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:556
-msgid "Description"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:561
-msgid "Keywords"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:566
-msgid "Additional settings"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:571
-msgid "Multiple"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:573
-msgid "Allow use block multiple times on the page."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:578
-msgid "Class Name"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:580
-msgid "Additional field to add custom class name."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:585
-msgid "Anchor"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:587
-msgid "Additional field to add block ID attribute."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:592
-msgid "Inserter"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:594
-msgid "Show block in blocks inserter."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:600
-msgid "HTML"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:602
-msgid "Allow convert block to HTML."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:607
-msgid "Align"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:646
-msgid "Name"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:647
-msgid "Type"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:648
-msgid "Placement"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:649
-msgid "Meta"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:655
-msgid "Loading..."
-msgstr ""
-
-#. translators: %1$s - documentation link.
-#: dist/lazy-blocks/classes/class-blocks.php:671
-msgid "You can use PHP to output block <a href=\"%1$s\">%1$s</a>"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:676
-msgid "Note 1: if you use blocks as Metaboxes, you may leave this code editor blank."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:679
-msgid "Note 2: supported Handlebars syntax with your controls available by name. For example, if you have control with name <strong>my_control</strong>, you can print it <strong>{{my_control}}</strong>."
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:704
-msgid "Frontend HTML"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:707
-msgid "Editor HTML"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:787
-msgid "Show in posts"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:788
-msgid "In all posts by default"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-blocks.php:984
+#: dist/lazy-blocks/classes/class-blocks.php:658
 msgid "-- Select --"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-rest.php:71
+#: dist/lazy-blocks/classes/class-rest.php:98
 msgid "Sorry, you are not allowed to read Gutenberg blocks of this post."
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-rest.php:75
+#: dist/lazy-blocks/classes/class-rest.php:102
 msgid "Sorry, you are not allowed to read Gutenberg blocks as this user."
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-rest.php:109
+#: dist/lazy-blocks/classes/class-rest.php:123
+msgid "Sorry, you are not allowed to read Gutenberg blocks data."
+msgstr ""
+
+#: dist/lazy-blocks/classes/class-rest.php:127, dist/lazy-blocks/classes/class-rest.php:150
+msgid "Sorry, you are not allowed to read Gutenberg blocks data as this user."
+msgstr ""
+
+#: dist/lazy-blocks/classes/class-rest.php:183
 msgid "Invalid block."
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-rest.php:117
+#: dist/lazy-blocks/classes/class-rest.php:195
 msgid "Render callback is not specified."
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-templates.php:142
+#: dist/lazy-blocks/classes/class-templates.php:149, dist/lazy-blocks/classes/class-templates.php:150, dist/lazy-blocks/classes/class-templates.php:165, dist/lazy-blocks/classes/class-templates.php:208
 msgid "Templates"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-templates.php:143
+#: dist/lazy-blocks/classes/class-templates.php:166
 msgid "Template"
 msgstr ""
 
-#: dist/lazy-blocks/classes/class-templates.php:207
-msgid "Select post type:"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-tools.php:29, dist/lazy-blocks/classes/class-tools.php:30, dist/lazy-blocks/classes/class-tools.php:91
+#: dist/lazy-blocks/classes/class-tools.php:32, dist/lazy-blocks/classes/class-tools.php:33, dist/lazy-blocks/classes/class-tools.php:46
 msgid "Tools"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-tools.php:95
-msgid "Toggle panel: Export"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-tools.php:95
-msgid "Export"
-msgstr ""
-
-#: dist/lazy-blocks/classes/class-tools.php:97
-msgid "You can export PHP code and use it in the theme/plugin to register a local version of generated blocks and templates. A local field group can provide many benefits such as faster load times, version control & dynamic blocks/templates. Simply copy and paste the following code to your theme's functions.php file or include it within an external file."
 msgstr ""
 
 #: dist/lazy-blocks/lazy-blocks.php:206, dist/lazy-blocks/lazy-blocks.php:207

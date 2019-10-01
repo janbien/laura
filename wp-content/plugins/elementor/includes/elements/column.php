@@ -16,18 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Element_Column extends Element_Base {
 
 	/**
-	 * Element edit tools.
-	 *
-	 * Holds all the edit tools of the element. For example: delete, duplicate etc.
-	 *
-	 * @access protected
-	 * @static
-	 *
-	 * @var array
-	 */
-	protected static $_edit_tools;
-
-	/**
 	 * Get column name.
 	 *
 	 * Retrieve the column name.
@@ -108,50 +96,6 @@ class Element_Column extends Element_Base {
 	}
 
 	/**
-	 * Get default edit tools.
-	 *
-	 * Retrieve the element default edit tools. Used to set initial tools.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 * @static
-	 *
-	 * @return array Default edit tools.
-	 */
-	protected static function get_default_edit_tools() {
-		$column_label = __( 'Column', 'elementor' );
-
-		$edit_tools = [
-			'edit' => [
-				'title' => __( 'Edit', 'elementor' ),
-				'icon' => 'column',
-			],
-		];
-
-		if ( self::is_edit_buttons_enabled() ) {
-			$edit_tools += [
-				'duplicate' => [
-					/* translators: %s: Column label */
-					'title' => sprintf( __( 'Duplicate %s', 'elementor' ), $column_label ),
-					'icon' => 'clone',
-				],
-				'add' => [
-					/* translators: %s: Column label */
-					'title' => sprintf( __( 'Add %s', 'elementor' ), $column_label ),
-					'icon' => 'plus',
-				],
-				'remove' => [
-					/* translators: %s: Column label */
-					'title' => sprintf( __( 'Remove %s', 'elementor' ), $column_label ),
-					'icon' => 'close',
-				],
-			];
-		}
-
-		return $edit_tools;
-	}
-
-	/**
 	 * Register column controls.
 	 *
 	 * Used to add new controls to the column element.
@@ -169,6 +113,7 @@ class Element_Column extends Element_Base {
 			]
 		);
 
+		// Element Name for the Navigator
 		$this->add_control(
 			'_title',
 			[
@@ -206,7 +151,7 @@ class Element_Column extends Element_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'content_position',
 			[
 				'label' => __( 'Vertical Align', 'elementor' ),
@@ -226,13 +171,15 @@ class Element_Column extends Element_Base {
 					'bottom' => 'flex-end',
 				],
 				'selectors' => [
-					'{{WRAPPER}}.elementor-column .elementor-column-wrap' => 'align-items: {{VALUE}}',
-					'{{WRAPPER}}.elementor-column > .elementor-column-wrap > .elementor-widget-wrap' => 'align-content: {{VALUE}}',
+					// TODO: The following line is for BC since 2.7.0
+					'.elementor-bc-flex-widget {{WRAPPER}}.elementor-column .elementor-column-wrap' => 'align-items: {{VALUE}}',
+					// This specificity is intended to make sure column css overwrites section css on vertical alignment (content_position)
+					'{{WRAPPER}}.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap' => 'align-content: {{VALUE}}; align-items: {{VALUE}};',
 				],
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'align',
 			[
 				'label' => __( 'Horizontal Align', 'elementor' ),
@@ -253,7 +200,7 @@ class Element_Column extends Element_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'space_between_widgets',
 			[
 				'label' => __( 'Widgets Space', 'elementor' ) . ' (px)',
@@ -313,7 +260,13 @@ class Element_Column extends Element_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
+				'types' => [ 'classic', 'gradient', 'slideshow' ],
 				'selector' => '{{WRAPPER}}:not(.elementor-motion-effects-element-type-background) > .elementor-element-populated, {{WRAPPER}} > .elementor-column-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer',
+				'fields_options' => [
+					'background' => [
+						'frontend_available' => true,
+					],
+				],
 			]
 		);
 
@@ -718,15 +671,15 @@ class Element_Column extends Element_Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'selectors' => [
@@ -796,6 +749,7 @@ class Element_Column extends Element_Base {
 				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor' ),
 				'label_block' => false,
 				'style_transfer' => false,
+				'classes' => 'elementor-control-direction-ltr',
 			]
 		);
 
@@ -811,6 +765,7 @@ class Element_Column extends Element_Base {
 				'prefix_class' => '',
 				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor' ),
 				'label_block' => false,
+				'classes' => 'elementor-control-direction-ltr',
 			]
 		);
 
@@ -900,7 +855,7 @@ class Element_Column extends Element_Base {
 		$this->add_control(
 			'responsive_description',
 			[
-				'raw' => __( 'Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you\'re in editing mode in Elementor.', 'elementor' ),
+				'raw' => __( 'Responsive visibility will take effect only on preview or live page, and not while editing in Elementor.', 'elementor' ),
 				'type' => Controls_Manager::RAW_HTML,
 				'content_classes' => 'elementor-descriptor',
 			]
@@ -948,30 +903,6 @@ class Element_Column extends Element_Base {
 		$this->end_controls_section();
 
 		Plugin::$instance->controls_manager->add_custom_css_controls( $this );
-	}
-
-	/**
-	 * Render column edit tools.
-	 *
-	 * Used to generate the edit tools HTML.
-	 *
-	 * @since 1.8.0
-	 * @access protected
-	 */
-	protected function render_edit_tools() {
-		?>
-		<div class="elementor-element-overlay">
-			<ul class="elementor-editor-element-settings elementor-editor-column-settings">
-				<?php foreach ( self::get_edit_tools() as $edit_tool_name => $edit_tool ) : ?>
-					<li class="elementor-editor-element-setting elementor-editor-element-<?php echo $edit_tool_name; ?>" title="<?php echo $edit_tool['title']; ?>">
-						<i class="eicon-<?php echo $edit_tool['icon']; ?>" aria-hidden="true"></i>
-						<span class="elementor-screen-only"><?php echo $edit_tool['title']; ?></span>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-			<div class="elementor-column-percents-tooltip"></div>
-		</div>
-		<?php
 	}
 
 	/**

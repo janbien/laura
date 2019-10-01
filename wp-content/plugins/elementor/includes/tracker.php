@@ -1,6 +1,8 @@
 <?php
 namespace Elementor;
 
+use Elementor\Core\Base\Document;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -131,28 +133,7 @@ class Tracker {
 		// Update time first before sending to ensure it is set.
 		update_option( 'elementor_tracker_last_send', time() );
 
-		// Send here..
-		$params = [
-			'system' => self::get_system_reports_data(),
-			'site_lang' => get_bloginfo( 'language' ),
-			'email' => get_option( 'admin_email' ),
-			'usages' => [
-				'posts' => self::get_posts_usage(),
-				'library' => self::get_library_usage(),
-			],
-			'is_first_time' => empty( $last_send ),
-		];
-
-		/**
-		 * Tracker send tracking data params.
-		 *
-		 * Filters the data parameters when sending tracking request.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array $params Variable to encode as JSON.
-		 */
-		$params = apply_filters( 'elementor/tracker/send_tracking_data_params', $params );
+		$params = self::get_tracking_data( empty( $last_send ) );
 
 		add_filter( 'https_ssl_verify', '__return_false' );
 
@@ -229,7 +210,7 @@ class Tracker {
 	 */
 	public static function admin_notices() {
 		// Show tracker notice after 24 hours from installed time.
-		if ( self::get_installed_time() > strtotime( '-24 hours' ) ) {
+		if ( Plugin::$instance->get_install_time() > strtotime( '-24 hours' ) ) {
 			return;
 		}
 
@@ -303,26 +284,6 @@ class Tracker {
 	 */
 	public static function is_notice_shown() {
 		return self::$notice_shown;
-	}
-
-	/**
-	 * Get installed time.
-	 *
-	 * Retrieve the time when Elementor was installed.
-	 *
-	 * @since 2.0.0
-	 * @access private
-	 * @static
-	 *
-	 * @return int Unix timestamp when Elementor was installed.
-	 */
-	private static function get_installed_time() {
-		$installed_time = get_option( '_elementor_installed_time' );
-		if ( ! $installed_time ) {
-			$installed_time = time();
-			update_option( '_elementor_installed_time', $installed_time );
-		}
-		return $installed_time;
 	}
 
 	/**
@@ -449,5 +410,44 @@ class Tracker {
 
 		return $usage;
 
+	}
+
+	/**
+	 * Get the tracking data
+	 *
+	 * Retrieve tracking data and apply filter
+	 *
+	 * @access private
+	 * @static
+	 *
+	 * @param bool $is_first_time
+	 *
+	 * @return array
+	 */
+	private static function get_tracking_data( $is_first_time = false ) {
+		$params = [
+			'system' => self::get_system_reports_data(),
+			'site_lang' => get_bloginfo( 'language' ),
+			'email' => get_option( 'admin_email' ),
+			'usages' => [
+				'posts' => self::get_posts_usage(),
+				'library' => self::get_library_usage(),
+			],
+			'is_first_time' => $is_first_time,
+		];
+
+		/**
+		 * Tracker send tracking data params.
+		 *
+		 * Filters the data parameters when sending tracking request.
+		 *
+		 * @param array $params Variable to encode as JSON.
+		 *
+		 * @since 1.0.0
+		 *
+		 */
+		$params = apply_filters( 'elementor/tracker/send_tracking_data_params', $params );
+
+		return $params;
 	}
 }

@@ -3,6 +3,7 @@ namespace Elementor\Core\Files;
 
 use Elementor\Core\Files\CSS\Global_CSS;
 use Elementor\Core\Files\CSS\Post as Post_CSS;
+use Elementor\Core\Files\Svg\Svg_Handler;
 use Elementor\Core\Responsive\Files\Frontend;
 use Elementor\Utils;
 
@@ -19,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Manager {
 
+	private $files = [];
+
 	/**
 	 * Files manager constructor.
 	 *
@@ -29,6 +32,18 @@ class Manager {
 	 */
 	public function __construct() {
 		$this->register_actions();
+	}
+
+	public function get( $class, $args ) {
+		$id = $class . '-' . wp_json_encode( $args );
+
+		if ( ! isset( $this->files[ $id ] ) ) {
+			// Create an instance from dynamic args length.
+			$reflection_class = new \ReflectionClass( $class );
+			$this->files[ $id ] = $reflection_class->newInstanceArgs( $args );
+		}
+
+		return $this->files[ $id ];
 	}
 
 	/**
@@ -48,7 +63,7 @@ class Manager {
 			return;
 		}
 
-		$css_file = new Post_CSS( $post_id );
+		$css_file = Post_CSS::create( $post_id );
 
 		$css_file->delete();
 	}
@@ -99,16 +114,6 @@ class Manager {
 		foreach ( glob( $path ) as $file_path ) {
 			unlink( $file_path );
 		}
-
-		/**
-		 * Elementor clear files.
-		 *
-		 * Fires after Elementor clears files
-		 *
-		 * @since 2.0.8
-		 * @deprecated 2.1.0 Use `elementor/core/files/clear_cache` instead
-		 */
-		do_action_deprecated( 'elementor/css-file/clear_cache', [], '2.1.0', 'elementor/core/files/clear_cache' );
 
 		/**
 		 * Elementor clear files.

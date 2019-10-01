@@ -42,6 +42,17 @@ class Preview {
 			return;
 		}
 
+		if ( isset( $_GET['preview-debug'] ) ) {
+			register_shutdown_function( function () {
+				$e = error_get_last();
+				if ( $e ) {
+					echo '<div id="elementor-preview-debug-error"><pre>';
+					echo $e['message'];
+					echo '</pre></div>';
+				}
+			} );
+		}
+
 		$this->post_id = get_the_ID();
 
 		// Don't redirect to permalink.
@@ -170,6 +181,8 @@ class Preview {
 		wp_add_inline_script( 'jquery-migrate', 'jQuery.holdReady( true );' );
 
 		Plugin::$instance->frontend->enqueue_styles();
+
+		Plugin::$instance->widgets_manager->enqueue_widgets_styles();
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 

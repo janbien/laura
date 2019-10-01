@@ -16,19 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Element_Section extends Element_Base {
 
 	/**
-	 * Section edit tools.
-	 *
-	 * Holds the section edit tools.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 * @static
-	 *
-	 * @var array Section edit tools.
-	 */
-	protected static $_edit_tools;
-
-	/**
 	 * Section predefined columns presets.
 	 *
 	 * Holds the predefined columns width for each columns count available by
@@ -202,54 +189,6 @@ class Element_Section extends Element_Base {
 	}
 
 	/**
-	 * Get default edit tools.
-	 *
-	 * Retrieve the section default edit tools. Used to set initial tools.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 * @static
-	 *
-	 * @return array Default section edit tools.
-	 */
-	protected static function get_default_edit_tools() {
-		$section_label = __( 'Section', 'elementor' );
-
-		$edit_tools = [
-			'add' => [
-				/* translators: %s: Section label */
-				'title' => sprintf( __( 'Add %s', 'elementor' ), $section_label ),
-				'icon' => 'plus',
-			],
-			'edit' => [
-				/* translators: %s: Section label */
-				'title' => sprintf( __( 'Edit %s', 'elementor' ), $section_label ),
-				'icon' => 'handle',
-			],
-		];
-
-		if ( self::is_edit_buttons_enabled() ) {
-			$edit_tools += [
-				'duplicate' => [
-					/* translators: %s: Section label */
-					'title' => sprintf( __( 'Duplicate %s', 'elementor' ), $section_label ),
-					'icon' => 'clone',
-				],
-			];
-		}
-
-		$edit_tools += [
-			'remove' => [
-				/* translators: %s: Section label */
-				'title' => sprintf( __( 'Delete %s', 'elementor' ), $section_label ),
-				'icon' => 'close',
-			],
-		];
-
-		return $edit_tools;
-	}
-
-	/**
 	 * Get initial config.
 	 *
 	 * Retrieve the current section initial configuration.
@@ -291,6 +230,7 @@ class Element_Section extends Element_Base {
 			]
 		);
 
+		// Element Name for the Navigator
 		$this->add_control(
 			'_title',
 			[
@@ -479,7 +419,7 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'content_position',
 			[
-				'label' => __( 'Content Position', 'elementor' ),
+				'label' => __( 'Vertical Align', 'elementor' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
@@ -487,7 +427,19 @@ class Element_Section extends Element_Base {
 					'top' => __( 'Top', 'elementor' ),
 					'middle' => __( 'Middle', 'elementor' ),
 					'bottom' => __( 'Bottom', 'elementor' ),
+					'space-between' => __( 'Space Between', 'elementor' ),
+					'space-around' => __( 'Space Around', 'elementor' ),
+					'space-evenly' => __( 'Space Evenly', 'elementor' ),
 				],
+				'selectors_dictionary' => [
+					'top' => 'flex-start',
+					'middle' => 'center',
+					'bottom' => 'flex-end',
+				],
+				'selectors' => [
+					'{{WRAPPER}} > .elementor-container > .elementor-row > .elementor-column > .elementor-column-wrap > .elementor-widget-wrap' => 'align-content: {{VALUE}}; align-items: {{VALUE}};',
+				],
+				// TODO: The following line is for BC since 2.7.0
 				'prefix_class' => 'elementor-section-content-',
 			]
 		);
@@ -533,6 +485,17 @@ class Element_Section extends Element_Base {
 			]
 		);
 
+		$this->end_controls_section();
+
+		// Section Structure
+		$this->start_controls_section(
+			'section_structure',
+			[
+				'label' => __( 'Structure', 'elementor' ),
+				'tab' => Controls_Manager::TAB_LAYOUT,
+			]
+		);
+
 		$this->add_control(
 			'structure',
 			[
@@ -567,18 +530,9 @@ class Element_Section extends Element_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'types' => [ 'classic', 'gradient', 'video' ],
+				'types' => [ 'classic', 'gradient', 'video', 'slideshow' ],
 				'fields_options' => [
 					'background' => [
-						'frontend_available' => true,
-					],
-					'video_link' => [
-						'frontend_available' => true,
-					],
-					'video_start' => [
-						'frontend_available' => true,
-					],
-					'video_end' => [
 						'frontend_available' => true,
 					],
 				],
@@ -633,9 +587,6 @@ class Element_Section extends Element_Base {
 			[
 				'label' => __( 'Background Overlay', 'elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'background_background' => [ 'classic', 'gradient', 'video' ],
-				],
 			]
 		);
 
@@ -1137,15 +1088,15 @@ class Element_Section extends Element_Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'selectors' => [
@@ -1221,6 +1172,7 @@ class Element_Section extends Element_Base {
 				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor' ),
 				'label_block' => false,
 				'style_transfer' => false,
+				'classes' => 'elementor-control-direction-ltr',
 			]
 		);
 
@@ -1236,6 +1188,7 @@ class Element_Section extends Element_Base {
 				'prefix_class' => '',
 				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor' ),
 				'label_block' => false,
+				'classes' => 'elementor-control-direction-ltr',
 			]
 		);
 
@@ -1337,7 +1290,7 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'responsive_description',
 			[
-				'raw' => __( 'Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you\'re in editing mode in Elementor.', 'elementor' ),
+				'raw' => __( 'Responsive visibility will take effect only on preview or live page, and not while editing in Elementor.', 'elementor' ),
 				'type' => Controls_Manager::RAW_HTML,
 				'content_classes' => 'elementor-descriptor',
 			]
@@ -1388,35 +1341,6 @@ class Element_Section extends Element_Base {
 	}
 
 	/**
-	 * Render section edit tools.
-	 *
-	 * Used to generate the edit tools HTML.
-	 *
-	 * @since 1.8.0
-	 * @access protected
-	 */
-	protected function render_edit_tools() {
-		?>
-		<div class="elementor-element-overlay">
-			<ul class="elementor-editor-element-settings elementor-editor-section-settings">
-				<?php foreach ( self::get_edit_tools() as $edit_tool_name => $edit_tool ) : ?>
-					<?php if ( 'add' === $edit_tool_name ) : ?>
-						<# if ( ! isInner ) { #>
-					<?php endif; ?>
-					<li class="elementor-editor-element-setting elementor-editor-element-<?php echo esc_attr( $edit_tool_name ); ?>" title="<?php echo esc_attr( $edit_tool['title'] ); ?>">
-						<i class="eicon-<?php echo esc_attr( $edit_tool['icon'] ); ?>" aria-hidden="true"></i>
-						<span class="elementor-screen-only"><?php echo esc_html( $edit_tool['title'] ); ?></span>
-					</li>
-					<?php if ( 'add' === $edit_tool_name ) : ?>
-						<# } #>
-					<?php endif; ?>
-				<?php endforeach; ?>
-			</ul>
-		</div>
-		<?php
-	}
-
-	/**
 	 * Render section output in the editor.
 	 *
 	 * Used to generate the live preview, using a Backbone JavaScript template.
@@ -1426,10 +1350,23 @@ class Element_Section extends Element_Base {
 	 */
 	protected function _content_template() {
 		?>
-		<# if ( settings.background_video_link ) { #>
-			<div class="elementor-background-video-container elementor-hidden-phone">
+		<#
+		if ( settings.background_video_link ) {
+			let videoAttributes = 'autoplay muted playsinline';
+
+			if ( ! settings.background_play_once ) {
+				videoAttributes += ' loop';
+			}
+
+			view.addRenderAttribute( 'background-video-container', 'class', 'elementor-background-video-container' );
+
+			if ( ! settings.background_play_on_mobile ) {
+				view.addRenderAttribute( 'background-video-container', 'class', 'elementor-hidden-phone' );
+			}
+		#>
+			<div {{{ view.getRenderAttributeString( 'background-video-container' ) }}}>
 				<div class="elementor-background-video-embed"></div>
-				<video class="elementor-background-video-hosted elementor-html5-video" autoplay loop muted></video>
+				<video class="elementor-background-video-hosted elementor-html5-video" {{ videoAttributes }}></video>
 			</div>
 		<# } #>
 		<div class="elementor-background-overlay"></div>
@@ -1458,12 +1395,24 @@ class Element_Section extends Element_Base {
 			if ( 'video' === $settings['background_background'] ) :
 				if ( $settings['background_video_link'] ) :
 					$video_properties = Embed::get_video_properties( $settings['background_video_link'] );
+
+					$this->add_render_attribute( 'background-video-container', 'class', 'elementor-background-video-container' );
+
+					if ( ! $settings['background_play_on_mobile'] ) {
+						$this->add_render_attribute( 'background-video-container', 'class', 'elementor-hidden-phone' );
+					}
 					?>
-					<div class="elementor-background-video-container elementor-hidden-phone">
+					<div <?php echo $this->get_render_attribute_string( 'background-video-container' ); ?>>
 						<?php if ( $video_properties ) : ?>
 							<div class="elementor-background-video-embed"></div>
-						<?php else : ?>
-							<video class="elementor-background-video-hosted elementor-html5-video" autoplay loop muted></video>
+							<?php
+						else :
+							$video_tag_attributes = 'autoplay muted playsinline';
+							if ( 'yes' !== $settings['background_play_once'] ) :
+								$video_tag_attributes .= ' loop';
+							endif;
+							?>
+							<video class="elementor-background-video-hosted elementor-html5-video" <?php echo $video_tag_attributes; ?>></video>
 						<?php endif; ?>
 					</div>
 					<?php
@@ -1471,7 +1420,7 @@ class Element_Section extends Element_Base {
 			endif;
 
 			$has_background_overlay = in_array( $settings['background_overlay_background'], [ 'classic', 'gradient' ], true ) ||
-									  in_array( $settings['background_overlay_hover_background'], [ 'classic', 'gradient' ], true );
+									in_array( $settings['background_overlay_hover_background'], [ 'classic', 'gradient' ], true );
 
 			if ( $has_background_overlay ) :
 				?>
