@@ -4,15 +4,15 @@
 * Requires at least: 4.9.0
 * Tested up to: 5.2
 * Requires PHP: 5.4
-* Stable tag: 1.7.0
+* Stable tag: 1.8.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Gutenberg blocks visual constructor. Custom meta fields or blocks with output without hard coding.
+Custom blocks and custom meta fields without hard coding for Gutenberg.
 
 ## Description ##
 
-**Lazy Blocks** is a Gutenberg blocks visual constructor for WordPress developers. You can create custom **meta fields** as well as **blocks** with output HTML. Add editor controls to your blocks using **drag & drop** visual constructor. Create **post templates** with predefined blocks (any post type).
+Lazy Blocks is a Gutenberg blocks visual constructor for WordPress users. You can create custom blocks as well as custom meta fields with output HTML. Add editor controls to your blocks using drag & drop visual constructor. Create post templates with predefined blocks (any post type).
 
 #### Links ####
 
@@ -22,8 +22,8 @@ Gutenberg blocks visual constructor. Custom meta fields or blocks with output wi
 
 #### Features ####
 
-* Create blocks with output code
-* Create blocks for meta custom fields
+* Create custom blocks with output code
+* Create custom blocks for meta custom fields
 * Handlebars used for blocks output
 * Export to PHP
 * Show controls in block content / inspector
@@ -69,6 +69,24 @@ The manual installation method involves downloading our LazyBlocks plugin and up
 3. Block in Gutenberg editor
 
 ## Changelog ##
+
+= 1.8.0 =
+
+* added support for PHP output method (instead of Handlebars)
+* added new Repeater options:
+  * Row Label
+  * Add Button Label
+  * Minimum Rows
+  * Maximum Rows
+  * Collapsible Rows
+* added Characters Limit option to text controls
+* added js actions to PreviewServerCallback component (before change and after change), useful for developers <https://lazyblocks.com/documentation/js-actions/>
+* added support for [Ghost Kit](https://ghostkit.io/) Extensions
+* added `callback` and `allow_wrapper` filters for both contexts using single filter name (frontend and editor) <https://lazyblocks.com/documentation/php-filters/#render-callback>
+* added filter for output attributes <https://lazyblocks.com/documentation/php-filters/#attributes>
+* improved Meta setting (use control name as meta if custom meta name is not defined)
+* fixed encoded values in Repeater controls
+* fixed possibility to add more than 1 InnerBlocks control per block
 
 = 1.7.0 =
 

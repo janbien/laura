@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Lazy Blocks
  * Description:  Gutenberg blocks visual constructor. Custom meta fields or blocks with output without hard coding.
- * Version:      1.7.0
+ * Version:      1.8.0
  * Author:       nK
  * Author URI:   https://nkdev.info/
  * License:      GPLv2 or later
@@ -245,7 +245,7 @@ class LazyBlocks {
             'day_names_short' => $day_names_short,
         ) );
 
-        wp_enqueue_style( 'lazyblocks-admin', $this->plugin_url . 'assets/admin/css/style.min.css', '', '1.7.0' );
+        wp_enqueue_style( 'lazyblocks-admin', $this->plugin_url . 'assets/admin/css/style.min.css', '', '1.8.0' );
     }
 }
 

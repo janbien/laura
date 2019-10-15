@@ -1,4 +1,4 @@
-/*! elementor - v2.7.3 - 24-09-2019 */
+/*! elementor - v2.7.4 - 06-10-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -16701,6 +16701,9 @@ function (_elementorModules$com) {
         },
         'save-template': function saveTemplate(args) {
           _this.manager.layout.showSaveTemplateView(args.model);
+        },
+        preview: function preview(args) {
+          _this.manager.layout.showPreviewView(args.model);
         }
       };
     }
@@ -16934,7 +16937,7 @@ module.exports = Marionette.ItemView.extend({
     click: 'onClick'
   },
   onClick: function onClick() {
-    elementor.templates.showTemplates();
+    $e.routes.restoreState('library');
   }
 });
 
@@ -17101,12 +17104,16 @@ TemplateLibraryCollectionView = Marionette.CompositeView.extend({
   toggleFilterClass: function toggleFilterClass() {
     this.$el.toggleClass('elementor-templates-filter-active', !!(elementor.templates.getFilter('text') || elementor.templates.getFilter('favorite')));
   },
+  onRender: function onRender() {
+    if ('remote' === elementor.templates.getFilter('source') && 'page' !== elementor.templates.getFilter('type')) {
+      this.setFiltersUI();
+    }
+  },
   onRenderCollection: function onRenderCollection() {
     this.addSourceData();
     this.toggleFilterClass();
 
     if ('remote' === elementor.templates.getFilter('source') && 'page' !== elementor.templates.getFilter('type')) {
-      this.setFiltersUI();
       this.setMasonrySkin();
     }
   },
@@ -17207,7 +17214,9 @@ TemplateLibraryTemplateRemoteView = TemplateLibraryTemplateView.extend({
     });
   },
   onPreviewButtonClick: function onPreviewButtonClick() {
-    elementor.templates.layout.showPreviewView(this.model);
+    $e.route('library/preview', {
+      model: this.model
+    });
   },
   onFavoriteCheckboxChange: function onFavoriteCheckboxChange() {
     var isFavorite = this.ui.favoriteCheckbox[0].checked;
@@ -20678,7 +20687,7 @@ ControlMediaItemView = ControlBaseDataView.extend({
     this.$el.remove();
   },
   resetGallery: function resetGallery() {
-    this.setValue('');
+    this.setValue([]);
     this.applySavedValue();
   },
   initRemoveDialog: function initRemoveDialog() {

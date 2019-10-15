@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: dist/lazy-blocks/classes/class-blocks.php:251, dist/lazy-blocks/classes/class-blocks.php:791
+#: dist/lazy-blocks/classes/class-blocks.php:251, dist/lazy-blocks/classes/class-blocks.php:793
 msgid "Lazy Blocks"
 msgstr ""
 
