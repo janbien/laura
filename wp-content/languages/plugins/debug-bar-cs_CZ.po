@@ -1,0 +1,299 @@
+# Translation of Plugins - Debug Bar - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - Debug Bar - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-07-16 12:01:02+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - Debug Bar - Stable (latest release)\n"
+
+#. translators: %s = duration in milliseconds.
+#: panels/class-debug-bar-queries.php:54 panels/class-debug-bar-queries.php:84
+msgid "%s ms"
+msgstr "%s ms"
+
+#. translators: %d is the site id number in a multi-site setting.
+#: debug-bar.php:236
+msgid "#%d"
+msgstr "č.%d"
+
+#. translators: %1$s is a function or file name, %2$s a version number.
+#: panels/class-debug-bar-deprecated.php:91
+#: panels/class-debug-bar-deprecated.php:109
+msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "Funkce %1$s je <strong>zastaralá</strong> už od verze %2$s a v aktuální verzi WordPressu není dostupné ani žádné náhradní řešení."
+
+#. translators: %1$s is a function or file name, %2$s a version number, %3$s an
+#. alternative function or file to use.
+#: panels/class-debug-bar-deprecated.php:88
+#: panels/class-debug-bar-deprecated.php:106
+msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr "Funkce %1$s je <strong>zastaralá</strong> už od verze %2$s! Použijte raději funkci %3$s."
+
+#: panels/class-debug-bar-deprecated.php:134
+msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "Funkce %1$s byla použita s parametrem, který <strong>není podporován</strong> už od verze %2$s a v aktuální verzi WordPressu není dostupné žádné náhradní řešení."
+
+#: panels/class-debug-bar-deprecated.php:132
+msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
+msgstr "Funkce %1$s byla použita s parametrem, který <strong>není podporován</strong> už od verze %2$s! %3$s"
+
+#. translators: %s is a formatted number representing the memory usage.
+#: debug-bar.php:253
+msgid "%s bytes"
+msgstr "%s bajtů"
+
+#: panels/class-debug-bar-wp-query.php:26
+msgid "404"
+msgstr "404"
+
+#. Description of the plugin
+msgid "Adds a debug menu to the admin bar that shows query, cache, and other helpful debugging information."
+msgstr "Přidá do panelu menu pro ladění, které zobrazuje dotazy, mezipaměť a další užitečné informace pro ladění."
+
+#: panels/class-debug-bar-wp-query.php:50
+msgid "Archive"
+msgstr "Archiv"
+
+#: panels/class-debug-bar-wp-query.php:36
+msgid "Attachment"
+msgstr "Příloha"
+
+#: panels/class-debug-bar-wp-query.php:46
+msgid "Author"
+msgstr "Autor"
+
+#: panels/class-debug-bar-wp-query.php:42
+msgid "Category"
+msgstr "Rubrika"
+
+#: debug-bar.php:243
+msgid "DB"
+msgstr "DB"
+
+#: panels/class-debug-bar-queries.php:66
+msgid "Database Errors"
+msgstr "Chyby databáze"
+
+#: panels/class-debug-bar-wp-query.php:48
+msgid "Date"
+msgstr "Datum"
+
+#: debug-bar.php:163
+msgid "Debug"
+msgstr "Ladit"
+
+#. Plugin Name of the plugin
+msgid "Debug Bar"
+msgstr "Debug Bar"
+
+#: panels/class-debug-bar-deprecated.php:11
+msgid "Deprecated"
+msgstr "Zastaralé"
+
+#: panels/class-debug-bar-wp-query.php:32
+msgid "Front Page"
+msgstr "Úvodní stránka"
+
+#: panels/class-debug-bar-wp-query.php:34
+msgid "Home"
+msgstr "Domů"
+
+#: panels/class-debug-bar-js.php:7
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: panels/class-debug-bar-request.php:50
+msgid "Matched Rewrite Query:"
+msgstr "Odpovídající dotaz Rewrite:"
+
+#: panels/class-debug-bar-request.php:41
+msgid "Matched Rewrite Rule:"
+msgstr "Odpovídající pravidlo rewrite:"
+
+#: debug-bar.php:251
+msgid "Memory Usage"
+msgstr "Využití paměti"
+
+#: debug-bar.php:243
+msgid "MySQL"
+msgstr "MySQL"
+
+#: panels/class-debug-bar-php.php:100
+msgid "NOTICE:"
+msgstr "UPOZORNĚNÍ:"
+
+#: panels/class-debug-bar-request.php:18 panels/class-debug-bar-request.php:27
+#: panels/class-debug-bar-request.php:36 panels/class-debug-bar-request.php:45
+#: panels/class-debug-bar-wp-query.php:80
+msgid "None"
+msgstr "Nic"
+
+#: panels/class-debug-bar-php.php:13
+msgid "Notices / Warnings"
+msgstr "Upozornění/varování"
+
+#: panels/class-debug-bar-object-cache.php:5
+msgid "Object Cache"
+msgstr "Object Cache"
+
+#: debug-bar.php:240
+msgid "PHP"
+msgstr "PHP"
+
+#: panels/class-debug-bar-wp-query.php:40
+msgid "Page"
+msgstr "Stránka"
+
+#: panels/class-debug-bar-wp-query.php:69
+msgid "Page for Posts:"
+msgstr "Stránka s příspěvky:"
+
+#: panels/class-debug-bar-wp-query.php:70
+msgid "Page on Front:"
+msgstr "Úvodní stránka:"
+
+#: panels/class-debug-bar-wp-query.php:52
+msgid "Paged"
+msgstr "Stránkováno"
+
+#: debug-bar.php:259
+msgid "Please Enable"
+msgstr "Aktivujte prosím"
+
+#: panels/class-debug-bar-wp-query.php:74
+msgid "Post Type:"
+msgstr "Typ obsahu:"
+
+#: panels/class-debug-bar-wp-query.php:21
+msgid "Queried Object ID:"
+msgstr "ID dotazovaného objektu:"
+
+#: panels/class-debug-bar-wp-query.php:94
+msgid "Queried Object:"
+msgstr "Dotazovaný objekt:"
+
+#: panels/class-debug-bar-queries.php:6
+msgid "Queries"
+msgstr "Dotaz"
+
+#: panels/class-debug-bar-wp-query.php:85
+msgid "Query Arguments:"
+msgstr "Argumenty dotazu:"
+
+#: panels/class-debug-bar-wp-query.php:89
+msgid "Query SQL:"
+msgstr "SQL dotaz:"
+
+#: panels/class-debug-bar-request.php:32
+msgid "Query String:"
+msgstr "Řetězec dotazu:"
+
+#: panels/class-debug-bar-wp-query.php:60
+msgid "Query Template:"
+msgstr "Šablona dotazu:"
+
+#: panels/class-debug-bar-wp-query.php:56
+msgid "Query Type:"
+msgstr "Typ dotazu:"
+
+#: panels/class-debug-bar-request.php:5
+msgid "Request"
+msgstr "Požadavek"
+
+#: panels/class-debug-bar-request.php:23
+msgid "Request:"
+msgstr "Požadavek:"
+
+#: panels/class-debug-bar-queries.php:62
+msgid "SAVEQUERIES must be defined to show the query log."
+msgstr "Pro zobrazení protokolu dotazů je nutné definovat SAVEQUARIES."
+
+#: panels/class-debug-bar-wp-query.php:28
+msgid "Search"
+msgstr "Hledat"
+
+#: panels/class-debug-bar-wp-query.php:67
+msgid "Show on Front:"
+msgstr "Na úvodní stránce zobrazit:"
+
+#: panels/class-debug-bar-wp-query.php:38
+msgid "Single"
+msgstr "Jeden"
+
+#: panels/class-debug-bar-wp-query.php:44
+msgid "Tag"
+msgstr "Štítek"
+
+#: panels/class-debug-bar-wp-query.php:30
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#: panels/class-debug-bar-queries.php:60
+msgid "There are no queries on this page."
+msgstr "Na této stránce nejsou žádné dotazy."
+
+#. translators: %s = a url.
+#: panels/class-debug-bar-queries.php:32
+msgid "There are too many queries to show easily! <a href=\"%s\">Show them anyway</a>"
+msgstr "Existuje příliš mnoho dotazů, které by šlo snadno zobrazit. <a href=\"%s\">Přesto zobrazit</a>"
+
+#: panels/class-debug-bar-deprecated.php:34
+msgid "Total Arguments:"
+msgstr "Celkem argumentů:"
+
+#: panels/class-debug-bar-queries.php:87
+msgid "Total DB Errors:"
+msgstr "Celkem chyb DB:"
+
+#: panels/class-debug-bar-js.php:19
+msgid "Total Errors:"
+msgstr "Celkem chyb:"
+
+#: panels/class-debug-bar-deprecated.php:35
+msgid "Total Files:"
+msgstr "Celkem souborů:"
+
+#: panels/class-debug-bar-deprecated.php:33
+msgid "Total Functions:"
+msgstr "Celkem funkcí:"
+
+#: panels/class-debug-bar-php.php:81
+msgid "Total Notices:"
+msgstr "Celkem upozornění:"
+
+#: panels/class-debug-bar-queries.php:79
+msgid "Total Queries:"
+msgstr "Celkem dotazů:"
+
+#: panels/class-debug-bar-php.php:80
+msgid "Total Warnings:"
+msgstr "Celkem varování:"
+
+#: panels/class-debug-bar-queries.php:82
+msgid "Total query time:"
+msgstr "Celkový čas dotazu:"
+
+#: panels/class-debug-bar-php.php:87
+msgid "WARNING:"
+msgstr "VAROVÁNÍ:"
+
+#: panels/class-debug-bar-wp-query.php:5
+msgid "WP Query"
+msgstr "WP dotaz"
+
+#. Author URI of the plugin
+msgid "https://wordpress.org/"
+msgstr "https://cs.wordpress.org/"
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/debug-bar/"
+msgstr "https://cs.wordpress.org/plugins/debug-bar/"
+
+#. Author of the plugin
+msgid "wordpressdotorg"
+msgstr "wordpressdotorg"
